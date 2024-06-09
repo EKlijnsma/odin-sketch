@@ -1,10 +1,14 @@
 const cont = document.querySelector(".container")
 const sizeBtn = document.querySelector("#size")
+const resetBtn = document.querySelector("#reset")
 
-resetGrid(16)
+resetGrid()
+sizeBtn.addEventListener("click", changeGridSize)
+resetBtn.addEventListener("click", () => resetGrid())
 
-function resetGrid(size) {
-    cont.innerHTML='';
+function resetGrid(size = 16) {
+    cont.innerHTML = "";
+    console.log(`resetting size to ${size} squared`)
     for (let i = 0; i < size; i++) {
         const row = document.createElement("div")
         row.classList.add("row")
@@ -22,12 +26,16 @@ function resetGrid(size) {
     }
 }
 
-sizeBtn.addEventListener("click", getGridSize)
 
 function getGridSize() {
     let size = 0;
     while (size > 100 || size < 1) {
         size = prompt("Enter grid size (max 100): ")
     }
+    return size
+}
+
+function changeGridSize() {
+    const size = getGridSize()
     resetGrid(size)
 }
