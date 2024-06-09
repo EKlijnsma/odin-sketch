@@ -4,7 +4,7 @@ const sizeBtn = document.querySelector("#size")
 resetGrid(16)
 
 function resetGrid(size) {
-    deleteTiles();
+    cont.innerHTML='';
     for (let i = 0; i < size; i++) {
         const row = document.createElement("div")
         row.classList.add("row")
@@ -30,11 +30,4 @@ function getGridSize() {
         size = prompt("Enter grid size (max 100): ")
     }
     resetGrid(size)
-}
-
-function deleteTiles() {
-    const tiles = document.querySelectorAll(".tile")
-    for (tile of tiles) {
-        tile.remove()
-    }
 }

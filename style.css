@@ -11,23 +11,25 @@ body {
 }
 
 .container {
-    align-items: center;
+    align-items: stretch;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 700px;
+    height: 700px;
+    border: 3px solid navy;
+    border-radius: 3px;
 }
 
 .row {
-    align-items: center;
+    align-items: stretch;
     display: flex;
-    justify-content: center;
+    flex: 1 1 700px;
+    justify-content: space-between;
 }
 
 .tile {
-    border: 1px solid black;
-    flex-shrink: 0;
-    height: 15px;
-    width: 15px;
+    flex: 1 1 700px;
 }
 
 .black {
