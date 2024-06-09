@@ -11,6 +11,7 @@ for (let i = 0; i < grid; i++) {
         const tile = document.createElement("div")
         tile.classList.add("tile")
         row.appendChild(tile)
+        tile.addEventListener("mouseover", (event) => {event.target.classList.add("black")});
     }
     // append row container as child to container
     cont.appendChild(row)

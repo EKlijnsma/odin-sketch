@@ -14,14 +14,12 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 1px;
     justify-content: center;
 }
 
 .row {
     align-items: center;
     display: flex;
-    gap: 1px;
     justify-content: center;
 }
 
@@ -30,4 +28,8 @@ body {
     flex-shrink: 0;
     height: 15px;
     width: 15px;
+}
+
+.black {
+    background-color: black;
 }
