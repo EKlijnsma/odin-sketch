@@ -9,18 +9,28 @@ body {
     padding: 10px;
     width: 100vw;
 }
-
+.frame {
+    padding: 50px;
+    background-color: lightseagreen;
+    border-radius: 80px;
+    margin: 32px auto;
+    box-sizing: border-box;
+    width: 800px;
+    height: 800px;
+    border: 2px solid black;
+    }
+    
 .container {
+    border: 2px solid black;
+    background-color: white;
     align-items: stretch;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 700px;
     height: 700px;
-    border: 5px solid navy;
-    border-radius: 32px;
-    padding: 16px;
-    margin: 32px auto;
+    margin: auto;
+    box-sizing: border-box;
 }
 
 .row {
