@@ -18,8 +18,16 @@ function resetGrid(size = 16) {
             // append tiles as child to row container
             const tile = document.createElement("div")
             tile.classList.add("tile")
+            tile.style.opacity = 0
+            tile.style.backgroundColor = "black"
             row.appendChild(tile)
-            tile.addEventListener("mouseover", (event) => {event.target.classList.add("black")});
+            tile.addEventListener("mouseover", (event) => {
+                // event.target.style.backgroundColor = 'black'
+                let currentOpacity = parseFloat(event.target.style.opacity);
+                if (currentOpacity < 1) {
+                    event.target.style.opacity = currentOpacity + 0.1
+                }
+            });
         }
         // append row container as child to container
         cont.appendChild(row)
