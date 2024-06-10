@@ -7,29 +7,30 @@ sizeBtn.addEventListener("click", changeGridSize)
 resetBtn.addEventListener("click", () => resetGrid())
 
 function resetGrid(size = 16) {
+    // emtpy the innerHTML of the container div
     cont.innerHTML = "";
-    console.log(`resetting size to ${size} squared`)
+
+    // construct rows
     for (let i = 0; i < size; i++) {
         const row = document.createElement("div")
         row.classList.add("row")
-
+        // construct tiles
         for (let j = 0; j < size; j++) {
-            // create tiles
-            // append tiles as child to row container
             const tile = document.createElement("div")
             tile.classList.add("tile")
             tile.style.opacity = 0
             tile.style.backgroundColor = "black"
+            // append tiles to row
             row.appendChild(tile)
+
             tile.addEventListener("mouseover", (event) => {
-                // event.target.style.backgroundColor = 'black'
                 let currentOpacity = parseFloat(event.target.style.opacity);
                 if (currentOpacity < 1) {
                     event.target.style.opacity = currentOpacity + 0.1
                 }
             });
         }
-        // append row container as child to container
+        // append rows to container
         cont.appendChild(row)
     }
 }
